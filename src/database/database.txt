@@ -1,3 +1,3 @@
-0     1    2    3      4              5[]           6[]     7[]  
-Idade,Sexo,Peso,Altura,Tipo Sanguíneo,Gosto Musical,Esporte,Jogo preferido
-18,M,100,190,A+,Rock-Pop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft
+Id,Idade,Sexo,Peso,Altura,Tipo Sanguíneo,Gosto Musical,Esporte,Jogo preferido
+1,18,M,100,190,A+,Rock-Pop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft
+2,18,M,100,190,A+,Funk-Rap-HipHop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft

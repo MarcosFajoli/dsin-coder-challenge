@@ -6,7 +6,7 @@ class Hospedeiro {
     arquivo = "src/database/database.txt";
 
     constructor() {
-        const response = this.getAll();
+        this.data = this.getAll();
     }
 
     getAll() {
@@ -21,26 +21,72 @@ class Hospedeiro {
         leitor.on("line", (linha) => {
             linhaNum++;
 
-            if (linhaNum == 1 || linhaNum == 2) return;
+            if (linhaNum == 1) return;
 
             const valores = linha.split(",");
 
             const pessoa = {
-                idade: valores[0],
-                sexo: valores[1],
-                peso: valores[2],
-                altura: valores[3],
-                tipoSanguineo: valores[4],
-                gostoMusical: valores[5].split("-"),
-                esporte: valores[6].split("-"),
-                jogoPreferido: valores[7].split("-"),
+                id: valores[0],
+                idade: valores[1],
+                sexo: valores[2],
+                peso: valores[3],
+                altura: valores[4],
+                tipoSanguineo: valores[5],
+                gostoMusical: valores[6].split("-"),
+                esporte: valores[7].split("-"),
+                jogoPreferido: valores[8].split("-"),
             };
 
-            // Adiciona o objeto ao array de dados
             this.data.push(pessoa);
         });
 
         return this.data;
+    }
+
+    getOne(id) {
+        return new Promise((resolve, reject) => {
+            let linhaNum = 0;
+            let pessoaEncontrada = null;
+
+            const leitor = readline.createInterface({
+                input: fs.createReadStream(this.arquivo),
+                output: process.stdout,
+                terminal: false,
+            });
+
+            leitor.on("line", (linha) => {
+                linhaNum++;
+
+                if (linhaNum == 1) return;
+
+                const valores = linha.split(",");
+
+                const pessoa = {
+                    id: valores[0],
+                    idade: valores[1],
+                    sexo: valores[2],
+                    peso: valores[3],
+                    altura: valores[4],
+                    tipoSanguineo: valores[5],
+                    gostoMusical: valores[6].split("-"),
+                    esporte: valores[7].split("-"),
+                    jogoPreferido: valores[8].split("-"),
+                };
+
+                if (pessoa.id === id) {
+                    pessoaEncontrada = pessoa;
+                    leitor.close();
+                }
+            });
+
+            leitor.on("close", () => {
+                if (pessoaEncontrada) {
+                    resolve(pessoaEncontrada);
+                } else {
+                    reject("Pessoa não encontrada");
+                }
+            });
+        });
     }
 }
 
