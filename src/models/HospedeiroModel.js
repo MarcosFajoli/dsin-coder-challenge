@@ -1,9 +1,11 @@
 const readline = require("readline");
 const fs = require("fs");
+const { error } = require("console");
 
 class Hospedeiro {
     data = [];
     arquivo = "src/database/database.txt";
+    response = {};
 
     constructor() {
         this.data = this.getAll();
@@ -87,6 +89,28 @@ class Hospedeiro {
                 }
             });
         });
+    }
+
+    insert(hospedeiro) {
+        const { id, idade, sexo, peso, altura, tipoSanguineo } = hospedeiro;
+
+        let { gostoMusical, esporte, jogoPreferido } = hospedeiro;
+
+        gostoMusical = gostoMusical.join("-");
+        esporte = esporte.join("-");
+        jogoPreferido = jogoPreferido.join("-");
+
+        const novoRegistro = `${id},${idade},${sexo},${peso},${altura},${tipoSanguineo},${gostoMusical},${esporte},${jogoPreferido}\n`;
+
+        fs.appendFile(this.arquivo, novoRegistro, (err) => {
+            if (err) {
+                console.error("Erro ao adicionar linha no arquivo:", err);
+            } else {
+                console.log("Linha adicionada com sucesso.");
+            }
+        });
+
+        return id;
     }
 }
 
