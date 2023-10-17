@@ -1,3 +1,5 @@
 Id,Idade,Sexo,Peso,Altura,Tipo Sanguíneo,Gosto Musical,Esporte,Jogo preferido
 1,18,M,100,190,A+,Rock-Pop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft
 2,18,M,100,190,A+,Funk-Rap-HipHop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft
+6,18,M,100,190,A+,Rock-Pop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft
+20,18,M,100,190,A+,Rock-Pop,Futebol-Basquete-Xadrez,CallOfDuty-Minecraft

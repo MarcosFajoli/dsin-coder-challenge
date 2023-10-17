@@ -85,7 +85,7 @@ class Hospedeiro {
                 if (pessoaEncontrada) {
                     resolve(pessoaEncontrada);
                 } else {
-                    reject("Pessoa não encontrada");
+                    reject("Hospedeiro não encontrado");
                 }
             });
         });
