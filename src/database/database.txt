@@ -1,1 +1,5 @@
 Id,Idade,Sexo,Peso,Altura,Tipo Sanguíneo,Gosto Musical,Esporte,Jogo preferido
+1,60,M,80,190,Dourado,Rock,Futebol,Minecraft
+1,60,M,80,190,Dourado,Rock,Futebol,Minecraft
+1,60,M,80,190,Dourado,Rock-Pop-Funk,Futebol,Minecraft
+20,60,M,80,190,Dourado,Rock-Pop-Funk,Futebol,Minecraft

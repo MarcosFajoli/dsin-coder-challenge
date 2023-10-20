@@ -42,7 +42,9 @@ class Hospedeiro {
             this.data.push(pessoa);
         });
 
-        return this.data;
+        let res = this.data;
+        this.data = [];
+        return res;
     }
 
     getOne(id) {
