@@ -158,6 +158,7 @@ class ZumbiController {
         }
 
         return response.status(200).json({
+            id: hospedeiro.id,
             idade: hospedeiro.idade,
             peso: hospedeiro.peso,
             altura: hospedeiro.altura,
